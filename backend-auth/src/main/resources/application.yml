@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application.name: backend-auth
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://mariadb-tutorial.clicssmtjld8.ap-northeast-2.rds.amazonaws.com/qlsv_VA
+    username: administrator
+    password: 6i6Z&9ooKjFK
+    jpa:
+      database-platform: org.hibernate.dialect.MariaDB103Dialect
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+  jackson:
+    deserialization:
+      FAIL_ON_IGNORED_PROPERTIES: false
+    serialization:
+      INDENT_OUTPUT: false
+      WRITE_DATES_AS_TIMESTAMPS: false
+      WRITE_BIGDECIMAL_AS_PLAIN: true
+  sql:
+    init:
+      mode: never
