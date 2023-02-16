@@ -182,8 +182,9 @@ const Sales = () => {
                             data={dataSource1}
                             dividers={dividers}
                             timeInterval={interval}
-                            valueInterval={interval=='Years'? 500 : 200}
-                            minValue={interval=='Years'? 10000 : 0} />}
+                            // valueInterval={interval=='Years'? 500 : 200}
+                            // minValue={interval=='Years'? 10000 : 0} 
+                            />}
                         {(activeChart && filter.chartType == 'Pie') && <Pie />}
                         {(activeChart && filter.chartType == 'Area') && <Area />}
                         {(activeChart && filter.chartType == 'Bar') && <Bar />}</div>)

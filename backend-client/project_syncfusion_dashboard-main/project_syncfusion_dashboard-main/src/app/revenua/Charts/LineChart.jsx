@@ -6,7 +6,7 @@ const LineChart = (props) => {
   const { currentMode } = useStateContext();
   const lineChartData = props.props.data;
   const dividers = props.props.dividers;
-  const LinePrimaryXAxis = {
+  const LinePrimaryXAxis ={
     valueType: 'DateTime',
     labelFormat: 'yMMMM',
     intervalType: props.props.timeInterval,
