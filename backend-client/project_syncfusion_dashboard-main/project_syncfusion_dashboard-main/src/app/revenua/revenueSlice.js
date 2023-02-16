@@ -14,7 +14,11 @@ const revenueSlice = createSlice({
     name: 'revenue',
     initialState,
     reducers:{
-        
+        resetData:{
+            reducer(state,action){
+                state.revenueData = [];
+            }
+        },
     },
     extraReducers(builder){
         builder.addCase(fetchData.pending, (state,action)=>{
@@ -83,5 +87,6 @@ export const fetchData = createAsyncThunk('revenue/fetchData',async (req)=>{
     };
 })
 
+export const { resetData } = revenueSlice.actions;
 
 export default revenueSlice.reducer;

@@ -4,13 +4,13 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import Line from './Charts/Line';
 import Pie from './Charts/Pie';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from './revenueSlice';
+import { fetchData, resetData} from './revenueSlice';
+
 import { lastRevenueDataSelector, servicesSlector, branchesSlector, statusSlector } from './selector'
 import { changeChartType, changeStart, changeEnd, changeInterval, changeDivide } from './filterSlice';
 import Area from './Charts/Area';
 import Bar from './Charts/Bar';
 import MoonLoader from "react-spinners/MoonLoader";
-import axios from 'axios';
 
 const Sales = () => {
     const dispatch = useDispatch();
@@ -28,6 +28,7 @@ const Sales = () => {
     let [color, setColor] = useState("#36d7b7");
     let isLoading = status == 'pending';
     useEffect(() => {
+        dispatch(resetData())
         dispatch(changeChartType(null));
         dispatch(changeStart(null));
         dispatch(changeEnd(null));
